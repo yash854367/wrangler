@@ -49,6 +49,15 @@ statements
  :  ( Comment | macro | directive ';' | pragma ';' | ifStatement)*
  ;
 
+byteSizeArg
+ : BYTE_SIZE
+ ;
+
+timeDurationArg
+ : TIME_DURATION
+ ;
+
+
 directive
  : command
   (   codeblock
@@ -64,6 +73,9 @@ directive
     | stringList
     | numberRanges
     | properties
+    | byteSizeArg          // NEW
+   | timeDurationArg      // NEW
+
   )*?
   ;
 
@@ -251,6 +263,27 @@ Tilde    : '~';
 Bool
  : 'true'
  | 'false'
+ ;
+BYTE_SIZE
+ : Number BYTE_UNIT
+ ;
+
+TIME_DURATION
+ : Number TIME_UNIT
+ ;
+
+fragment BYTE_UNIT
+ : [Kk][Bb]?
+ | [Mm][Bb]?
+ | [Gg][Bb]?
+ | [Tt][Bb]?
+ ;
+
+fragment TIME_UNIT
+ : [Mm][Ss]
+ | [Ss]
+ | [Mm]
+ | [Hh]
  ;
 
 Number
