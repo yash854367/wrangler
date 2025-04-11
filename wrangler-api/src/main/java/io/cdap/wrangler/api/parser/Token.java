@@ -31,6 +31,12 @@ import java.io.Serializable;
  * <p>It also provides method for providing the {@code JsonElement} of implementation
  * of this interface.</p>
  */
+public enum TokenType {
+  // existing types like STRING, NUMBER, BOOL, etc.
+  BYTE_SIZE,
+  TIME_DURATION
+}
+
 @PublicEvolving
 public interface Token extends Serializable {
   /**
