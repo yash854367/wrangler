@@ -1,0 +1,7 @@
+How to implement a custom aggregate directive in CDAP Wrangler?
+
+Java class to parse byte size values from strings like '10MB', '1.5GB'
+
+How to use Store with ExecutorContext in CDAP?
+
+Write unit test for directive using Aggregator in CDAP
